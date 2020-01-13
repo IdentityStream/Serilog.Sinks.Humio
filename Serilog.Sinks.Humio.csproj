@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Serilog.Sinks.Humio</PackageId>
+    <PackageId>Serilog.Sinks.Humio2</PackageId>
     <Version>1.0.0</Version>
     <Authors>IdentityStream</Authors>
     <Company>IdentityStream</Company>

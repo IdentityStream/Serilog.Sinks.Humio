@@ -1,8 +1,8 @@
-# Serilog.Sinks.Humio
+# Serilog.Sinks.Humio2
 A Serilog sink for [Humio](https://www.humio.com).
 ## How to use
 1. Grab the ingest token from Humio. (inside settings => Ingest => API Tokens)
-1. Install the Serilog.Sinks.Humio package from NuGet.
+1. Install the Serilog.Sinks.Humio2 package from NuGet.
 1. If you are using the cloud version of Humio:
 ```csharp
 var log = new LoggerConfiguration()
