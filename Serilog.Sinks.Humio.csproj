@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <PackageId>Serilog.Sinks.Humio2</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>IdentityStream</Authors>
     <Company>IdentityStream</Company>
     <Description>A Serilog sink for logging to Humio.</Description>
@@ -17,13 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="images\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="images\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="Serilog" Version="2.0.0" />
-    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
   </ItemGroup>
 
 </Project>
