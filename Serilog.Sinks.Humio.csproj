@@ -6,12 +6,12 @@
 
   <PropertyGroup>
     <PackageId>Serilog.Sinks.Humio2</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>IdentityStream</Authors>
     <Company>IdentityStream</Company>
     <Description>A Serilog sink for logging to Humio.</Description>
     <PackageTags>Serilog;sink;Humio</PackageTags>
-    <RepositoryUrl>https://github.com/IdentityStream-AS/Serilog.Sinks.Humio</RepositoryUrl>
+    <RepositoryUrl>https://github.com/IdentityStream/Serilog.Sinks.Humio</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
-    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Serilog" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="4.0.1" />
   </ItemGroup>
 
 </Project>
