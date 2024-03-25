@@ -13,20 +13,20 @@ using Serilog.Formatting.Json;
 using Serilog.Sinks.PeriodicBatching;
 
 namespace Serilog.Sinks.Humio {
-	public class Humio : PeriodicBatchingSink {
+	public class Humio : IBatchedLogEventSink {
 		private readonly string _ingestToken;
 		private readonly ITextFormatter _formatter;
 		private static readonly HttpClient HttpClient = new HttpClient();
 		private readonly Uri _uri;
 
-		public Humio(string ingestToken, string url) : base(10, TimeSpan.FromSeconds(5)) {
+		public Humio(string ingestToken, string url) {
 			_ingestToken = ingestToken;
 			_formatter = new JsonFormatter();
 			_uri = new Uri(
 				$"{url}/api/v1/ingest/humio-structured");
 		}
 
-		protected override async Task EmitBatchAsync(IEnumerable<LogEvent> events) {
+		public async Task EmitBatchAsync(IEnumerable<LogEvent> events) {
 			try {
 				/*
 				 * Example structured payload. See ingest structured data docs https://docs.humio.com/api/ingest-api/#structured-data
@@ -38,7 +38,7 @@ namespace Serilog.Sinks.Humio {
 				 * [
 					  {
 						"tags": {
-						  "host": "server1", 
+						  "host": "server1",
 						  "source": "application.log"
 						},
 						"events": [
@@ -84,5 +84,10 @@ namespace Serilog.Sinks.Humio {
 				Console.WriteLine($"Failed to ship logs to Humio: {e}");
 			}
 		}
-	}
+
+        public Task OnEmptyBatchAsync()
+        {
+			return Task.CompletedTask;
+        }
+    }
 }
